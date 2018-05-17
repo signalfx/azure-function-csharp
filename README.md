@@ -15,7 +15,8 @@ Add the following package reference to your `.csproj` or `function.proj`
 
 ### Using the Metric Wrapper
 
-Wrap the code inside the handler as followed:
+Create a MetricWrapper with the ExecutionContext
+Wrap your code in try-catch-finally, disposing of the wrapper finally.
 ```cs
 using azurefunctioncsharp
 

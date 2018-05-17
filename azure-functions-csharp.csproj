@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <Title>Signalfx Azure Functions C# Wrapper</Title>
+    <ProjectUrl>https://github.com/signalfx/azure-function-csharp</ProjectUrl>
+    <Version>1.0.0</Version>
+    <PackageId>signalfx-azure-functions</PackageId>
+    <Authors>SignalFx</Authors>
+    <Company>SignalFx</Company>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.Azure.WebJobs.Extensions" Version="2.2.0" />
+    <PackageReference Include="log4net" Version="2.0.8" />
+    <PackageReference Include="Google.ProtocolBuffers" Version="2.4.1.555" />
+    <PackageReference Include="protobuf-net" Version="2.0.0.668" />
+  </ItemGroup>
+</Project>
+
