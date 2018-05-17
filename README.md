@@ -18,6 +18,9 @@ Add the following package reference to your `.csproj` or `function.proj`
 Wrap the code inside the handler as followed:
 ```cs
 using azurefunctioncsharp
+
+...
+
     [FunctionName("HttpTrigger")]
 		public static IActionResult Run([HttpTrigger(AuthorizationLevel.Function, "get", "post", Route = null)]HttpRequest req, TraceWriter log, ExecutionContext context)
         {
