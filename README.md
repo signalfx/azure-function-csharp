@@ -30,6 +30,7 @@ using azurefunctioncsharp
                 ...
                 // your code
                 ...
+                return ResponseObject
             } catch (Exception e) {
               wrapper.Error();
             } finally {
@@ -76,22 +77,30 @@ The function wrapper adds the following dimensions to all data points sent to Si
 | metric_source | The literal value of 'azure_function_wrapper' |
 
 ### Sending a custom metric from the Azure Function
-UPDATE ME
 ```cs
-// construct data point builder
-SignalFxProtocolBuffers.DataPoint.Builder builder =
-        SignalFxProtocolBuffers.DataPoint.newBuilder()
-                .setMetric("my.custom.metric")
-                .setMetricType(SignalFxProtocolBuffers.MetricType.GAUGE)
-                .setValue(
-                        SignalFxProtocolBuffers.Datum.newBuilder()
-                                .setDoubleValue(100));
+using com.signalfuse.metrics.protobuf;
+
+// construct a data point
+DataPoint dp = new DataPoint();
+
+// use Datum to set the value
+Datum datum = new Datum();
+datum.intValue = 1;
+
+// set the name, value, and metric type on the datapoint
+
+dp.metric = "metric_name";
+dp.metricType = MetricType.GAUGE;
+dp.value = datum;
 
 // add custom dimension
-builder.addDimensionsBuilder().setKey("applicationName").setValue("CoolApp").build();
+Dimension dim = new Dimension();
+dim.key = "applicationName";
+dim.value = "CoolApp";
+dp.dimensions.Add(dim);
 
 // send the metric
-MetricSender.sendMetric(builder);
+MetricSender.sendMetric(dp);
 ```
 
 ### Testing locally.
