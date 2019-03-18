@@ -41,6 +41,14 @@ using azurefunctioncsharp
         }
 ```
 
+#### Configuring the ingest endpoint
+
+By default, this function wrapper will send to the `us0` realm. If you are
+not in this realm you will need to set the `SIGNALFX_API_HOSTNAME` environment
+variable to the correct realm ingest endpoint (https://ingest.{REALM}.signalfx.com).
+To determine what realm you are in, check your profile page in the SignalFx
+web application (click the avatar in the upper right and click My Profile).
+
 ### Environment Variable
 Set the Azure Function environment variables as follows:
 
