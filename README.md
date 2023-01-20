@@ -1,3 +1,8 @@
+>ℹ️&nbsp;&nbsp;SignalFx was acquired by Splunk in October 2019. See [Splunk SignalFx](https://www.splunk.com/en_us/investor-relations/acquisitions/signalfx.html) for more information.
+
+> # :warning: Deprecation Notice
+> **The SignalFx C# Azure Function Wrapper is deprecated and will reach End of Support on Jan 20, 2024. After that date, this repository will be archived and no longer receive updates. Until then, only critical security fixes and bug fixes will be provided.**
+
 # SignalFx C# Azure Function Wrapper
 
 SignalFx C# Azure Function Wrapper.
